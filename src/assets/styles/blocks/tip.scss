@@ -1,0 +1,15 @@
+.tip {
+    padding: 24px;
+    margin: 0 auto;
+    background-color: #4B4B4F;
+    font-size: 15px;
+    line-height: 18px;
+    max-width: 356px;
+    min-width: 200px;
+    min-height: 102px;
+    box-sizing: border-box;
+    @media (min-width: 1100px) {
+        left: calc(728px + 12vw);
+        position: absolute;
+    }
+}

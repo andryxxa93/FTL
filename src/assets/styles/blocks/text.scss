@@ -4,12 +4,13 @@
     .circle {
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 24px;
         height: 24px;
         background-color: #EF483E;
         border-radius: 100%;
         span {
-            margin-top: 10%;
+            margin-top: 20%;
         }
     }
     h3 {
@@ -17,4 +18,8 @@
         position: relative;
         font-size: calc(100% + 0.5vw) 
     }
+}
+
+.text {
+    font-size: 13px;
 }

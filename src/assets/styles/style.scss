@@ -11,37 +11,31 @@ section {
     padding: 40px 16px 37px 16px;
     height: 100%;
     background-color: #343539;
-}
-
-.container {
-    
+    @media (min-width: 728px) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        height: 100%;
+    }
+    @media (min-width: 1000px) {
+        padding-right: 0;
+    }
 }
 
 h1 {
     font-size: calc(150% + 0.5vw);
 }
 
-label {
+.label {
     margin-top: 16px;
     font-size: 13px;
 }
 
 input {
-    max-width: 728px;
     margin-top: 8px;
+    padding: 0 8px;
     height: 44px;
     font-size: 15px;
-}
-
-select {
-    height: 44px;
-    max-width: 172px;
-    min-width: 165px;
-    margin-top: 8px;
-}
-
-.display_block {
-    display: block;
+    color: black;
 }
 
 .flex-column {
@@ -55,18 +49,3 @@ select {
     align-items: center;
 }
 
-.display_none {
-    display: none;
-}
-
-.width_100 {
-    width: 100%;
-}
-
-.margin-top_40 {
-    margin-top: 40px;
-}
-
-.margin-left_12 {
-    margin-left: 12px;
-}

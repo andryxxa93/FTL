@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^8.1.1",
     "cross-env": "^7.0.3",
@@ -24,9 +27,14 @@
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
-    "webpack": "^5.35.1",
+    "webpack": "^5.36.2",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
-  }
+  },
+  "browserslist": [
+    "last 3 chrome version",
+    "last 3 safari version",
+    "last 3 firefox version"
+  ]
 }

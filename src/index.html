@@ -8,144 +8,202 @@
 </head>
 <body>
     <section>
-        <div class="container">
-            <!-- <div class="way__tip">
-                Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.#
-            </div> -->
-            <h1>
-                FTL: Прямая машина
-            </h1>
-            <div class="way flex-column margin-top_40">
-                <div class="title">
-                   <div class="circle">
-                    <span>1</span>
-                   </div> <h3>Маршрут</h3>
-                </div>
-                <label for="from">Откуда</label>
-                <input id="from" type="text">
-                <label for="to">Куда</label>
-                <input id="to" type="text">
-            </div>
-            <div class="transport flex-column margin-top_40">
-                <div class="title">
-                    <div class="circle">
-                        <span>2</span>
-                    </div><h3>Транспорт</h3>
-                </div>
-                <div class="flex-row">
-                    <div class="flex-column">
-                        <label for="capacity">
-                            Грузоподъёмность
-                        </label>
-                        <select name="" id="capacity">
-                            <option value="">Не выбрана</option>
-                            <option value="">Вариант 1</option>
-                            <option value="">Вариант 2</option>
-                            <option value="">Вариант 3</option>
-                            <option value="">Вариант 4</option>
-                            <option value="">Вариант 5</option>
-                        </select>
+        <h1>
+            FTL: Прямая машина
+        </h1>
+        <div class="grid">
+            <div class="way">
+                <div class="way__grid">
+                    <div class="way__grid-item">
+                        <div class="title">
+                            <div class="circle">
+                             <span>1</span>
+                            </div> <h3>Маршрут</h3>
+                         </div>
                     </div>
-                    <div class="flex-column margin-left_12">
-                        <label for="load">
-                            Способ погрузки
-                        </label>
-                        <select name="" id="load">
-                            <option value="">Задняя</option>
-                            <option value="">Вариант 1</option>
-                            <option value="">Вариант 2</option>
-                            <option value="">Вариант 3</option>
-                            <option value="">Вариант 4</option>
-                            <option value="">Вариант 5</option>
-                        </select>
+                    <div class="way__grid-item flex-column">
+                        <label class="label" for="from">Откуда</label>
+                        <input id="from" type="text">
+                    </div>
+                    <div class="way__grid-item flex-column">
+                        <label class="label" for="to">Куда</label>
+                        <input id="to" type="text">
                     </div>
                 </div>
             </div>
-            <div class="cargo margin-top_40">
-                <div class="title">
-                    <div class="circle">
-                        <span>3</span>
+            <div class="transport">
+                <div class="transport__grid">
+                    <div class="title">
+                        <div class="circle">
+                            <span>2</span>
+                        </div><h3>Транспорт</h3>
                     </div>
-                    <h3>Груз</h3>
-                </div>
-                <div class="flex-row">
-                    <div class="flex-column">
-                        <label for="cargo-type">
-                            Тип груза
-                        </label>
-                        <select name="" id="cargo-type">
-                            <option value="">Не выбран</option>
-                            <option value="">Вариант 1</option>
-                            <option value="">Вариант 2</option>
-                            <option value="">Вариант 3</option>
-                            <option value="">Вариант 4</option>
-                            <option value="">Вариант 5</option>
-                        </select>
-                    </div>
-                    <div class="danger flex-column display_none">
-                        <label for="danger-class">
-                            Класс опасности
-                        </label>
-                        <select name="" id="danger-class">
-                            <option value="">Класс 5 — Окисляющие вещества и органические перекиси</option>
-                            <option value="">Вариант 1</option>
-                            <option value="">Вариант 2</option>
-                            <option value="">Вариант 3</option>
-                            <option value="">Вариант 4</option>
-                            <option value="">Вариант 5</option>
-                        </select>
-                    </div>
-                    <div class="flex-column margin-left_12">
-                        <label for="cost">Объявленная ценность, ₽</label>
-                        <input id="cost" placeholder="≥ 1" type="text">
-                    </div>
-                </div>
-                <div class="temperature width_100">
-                    <div class="flex-row">
-                        <input type="checkbox">
-                        <div class="">Требуется температурный режим</div>
-                    </div>
-                    <div class="flex-row">
+                    <div class="transport__grid-item">
                         <div class="flex-column">
-                            <label for="temperature-from">От, °C</label>
-                            <input placeholder="-20" id="temperature-from" type="text">
+                            <label class="label" for="transport-select-input">Грузоподъёмность</label>
+                                <div id="transport-select-status" class='custom-select-status hidden-visually' aria-live="polite"></div>
+                                <div class="custom-select" id="transport-select">
+                                  <input placeholder='Не выбран' type="text" id="transport-select-input" class="select-css">
+                                    <span class="custom-select-icons">
+                                        <button>
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                                                <title>ctrl</title>
+                                                <path d="M9 11c0.278 0 0.555 0.116 0.753 0.341l6.247 7.14 6.247-7.14c0.364-0.416 0.995-0.458 1.411-0.094s0.458 0.995 0.094 1.411l-7 8c-0.19 0.217-0.464 0.341-0.753 0.341s-0.563-0.125-0.753-0.341l-7-8c-0.364-0.416-0.322-1.047 0.094-1.411 0.19-0.166 0.424-0.247 0.658-0.247z"></path>
+                                            </svg>
+                                        </button>
+                                    </span>
+                                  <ul class="custom-select-options hidden-all" id="transport-select-list">
+                                    <li><span>Вариант 1</span></li>
+                                    <li><span>Вариант 2</span></li>
+                                    <li><span>Вариант 3</strong></li>
+                                    <li><span>Вариант 4</strong></li>
+                                    <li><span>Вариант 5</span></li>
+                                  </ul>
+                            </div>
                         </div>
-                        <div class="flex-column margin-left_12">
-                            <label for="temperature-to">До, °C</label>
-                            <input placeholder="+23" id="temperature-to" type="text">
+                        <div class="flex-column">
+                            <label class="label" for="load-select-input">Способ погрузки</label>
+                                <div id="load-select-status" class='custom-select-status hidden-visually' aria-live="polite"></div>
+                                <div class="custom-select" id="load-select">
+                                  <input placeholder='Не выбран' type="text" id="load-select-input" class="select-css">
+                                    <span class="custom-select-icons">
+                                        <button>
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                                                <title>ctrl</title>
+                                                <path d="M9 11c0.278 0 0.555 0.116 0.753 0.341l6.247 7.14 6.247-7.14c0.364-0.416 0.995-0.458 1.411-0.094s0.458 0.995 0.094 1.411l-7 8c-0.19 0.217-0.464 0.341-0.753 0.341s-0.563-0.125-0.753-0.341l-7-8c-0.364-0.416-0.322-1.047 0.094-1.411 0.19-0.166 0.424-0.247 0.658-0.247z"></path>
+                                            </svg>
+                                        </button>
+                                    </span>
+                                  <ul class="custom-select-options hidden-all" id="load-select-list">
+                                    <li class="initial"><span>Задняя</span></li>
+                                    <li><span>Вариант 2</span></li>
+                                    <li><span>Вариант 3</strong></li>
+                                    <li><span>Вариант 4</strong></li>
+                                    <li><span>Вариант 5</span></li>
+                                  </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="time">
-                <div class="title">
-                    4<h3>Время</h3>
-                </div>
-                <div class="row">
-                    <div class="text">Когда прибыть на точку</div>
-                    <div class="text">700 км в день</div>
-                </div>
-                <div class="addresses">
-                    <div class="address">
-                        <div class="text">
-                            Адрес не указан
+            <div class="cargo">
+                <div class="cargo__grid">
+                    <div class="title">
+                        <div class="circle">
+                            <span>3</span>
                         </div>
-                        <button>
-                            НЕ ВЫБРАНО 
-                        </button>
+                        <h3>Груз</h3>
                     </div>
-                    <div class="address">
-                        <div class="text">
-                            Адрес не указан
+                    <div class="cargo-type__grid">
+                        <div class="flex-column">
+                            <label class="label" for="cargo-select-input">Тип груза</label>
+                            <div id="cargo-select-status" class='custom-select-status hidden-visually' aria-live="polite"></div>
+                            <div class="custom-select" id="cargo-select">
+                                <input placeholder='Не выбран' type="text" id="cargo-select-input" class="select-css">
+                                <span class="custom-select-icons">
+                                    <button>
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                                            <title>ctrl</title>
+                                            <path d="M9 11c0.278 0 0.555 0.116 0.753 0.341l6.247 7.14 6.247-7.14c0.364-0.416 0.995-0.458 1.411-0.094s0.458 0.995 0.094 1.411l-7 8c-0.19 0.217-0.464 0.341-0.753 0.341s-0.563-0.125-0.753-0.341l-7-8c-0.364-0.416-0.322-1.047 0.094-1.411 0.19-0.166 0.424-0.247 0.658-0.247z"></path>
+                                        </svg>
+                                    </button>
+                                </span>
+                                <ul class="custom-select-options hidden-all" id="cargo-select-list">
+                                    <li><span>Вариант 1</span></li>
+                                    <li><span>Вариант 2</span></li>
+                                    <li><span>Вариант 3</strong></li>
+                                    <li><span>Вариант 4</strong></li>
+                                    <li><span>Вариант 5</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <button>
-                            НЕ ВЫБРАНО 
-                        </button>
+                        <div class="danger flex-column">
+                            <label class="label" for="danger-select-input">Класс опасности</label>
+                                <div id="danger-select-status" class='custom-select-status hidden-visually' aria-live="polite"></div>
+                                <div class="custom-select" id="danger-select">
+                                    <input placeholder='Не выбран' type="text" id="danger-select-input" class="select-css">
+                                    <span class="custom-select-icons">
+                                            <button><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                                                <title>ctrl</title>
+                                                <path d="M9 11c0.278 0 0.555 0.116 0.753 0.341l6.247 7.14 6.247-7.14c0.364-0.416 0.995-0.458 1.411-0.094s0.458 0.995 0.094 1.411l-7 8c-0.19 0.217-0.464 0.341-0.753 0.341s-0.563-0.125-0.753-0.341l-7-8c-0.364-0.416-0.322-1.047 0.094-1.411 0.19-0.166 0.424-0.247 0.658-0.247z"></path>
+                                            </svg>
+                                        </button>
+                                    </span>
+                                    <ul class="custom-select-options hidden-all" id="danger-select-list">
+                                        <li class="initial"><span>Класс 5 — Окисляющие вещества и органические перекиси</span></li>
+                                        <li><span>Вариант 2</span></li>
+                                        <li><span>Вариант 3</strong></li>
+                                        <li><span>Вариант 4</strong></li>
+                                        <li><span>Вариант 5</span></li>
+                                    </ul>
+                                </div>
+                        </div>
+                        <div class="flex-column">
+                            <label class="label" for="cost">Объявленная ценность, ₽</label>
+                            <input id="cost" placeholder="≥ 1" type="text">
+                        </div>
+                    </div>
+                    <div class="temperature width_100">
+                        <div class="flex-row temperature__checkbox">
+                            <input id="c2" type="checkbox">
+                            <label class="text" for="c2">Требуется температурный режим</label>
+                        </div>
+                        <div class="temperature__grid temperature__mode">
+                            <div class="flex-column">
+                                <label class="label" for="temperature-from">От, °C</label>
+                                <input placeholder="-20" id="temperature-from" type="text">
+                            </div>
+                            <div class="flex-column">
+                                <label class="label" for="temperature-to">До, °C</label>
+                                <input placeholder="+23" id="temperature-to" type="text">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <label for="comment">Комментарий к заказу</label>
-                <textarea name="" id="commnet" placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"></textarea>
-            </div> -->
+            </div>
+            <div class="time">
+                <div class="time__grid">
+                    <div class="title">
+                        <div class="circle">
+                            <span>4</span>
+                        </div>
+                        <h3>Время</h3>
+                    </div>
+                    <div class="label flex-row space-between">
+                        <div class="text">Когда прибыть на точку</div>
+                        <div class="text">700 км в день</div>
+                    </div>
+                    <div class="time__grid-item">
+                        <div class="address">
+                            <div class="address__grid">
+                                <div class="address__item address__item-active flex-row space-between">
+                                    <div class="text">
+                                        Длинный адрес с градиентом
+                                    </div>
+                                    <button>
+                                        Не выбрано
+                                    </button>
+                                </div>
+                                <div class="address__item flex-row space-between">
+                                    <div class="text">
+                                        Адрес не указан
+                                    </div>
+                                    <button>
+                                        Не выбрано
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time__grid-item flex-column space-between">
+                        <label class="label" for="comment">Комментарий к заказу</label>
+                        <textarea name="" id="commnet" placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="tip">
+                Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.
+            </div>
         </div>
     </section>
 </body>

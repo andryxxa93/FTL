@@ -1,0 +1,121 @@
+
+.custom-select {
+  position: relative;
+  margin-top: 8px;
+}
+.select-css {
+  display: block;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: black;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+}
+.select-css::-ms-expand {
+  display: none;
+}
+.select-css:hover {
+  border-color: #888;
+}
+.select-css:focus {
+  color: #222;
+  outline: none;
+}
+
+.custom-select-icons {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  z-index: 15;
+  background: transparent;
+  transition: .3s all linear;
+	button {
+		background: white;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -35px;
+			width: 40px;
+			height: 100%;
+			background: linear-gradient(90deg, rgba(255, 255, 255, 0.465) 0%, rgb(255, 255, 255) 90%, rgb(255, 255, 255) 100%);
+		}
+	}
+}
+.custom-select-options {
+  border-radius: 0 0 0.25em 0.25em;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-weight: normal;
+  cursor: pointer;
+  z-index: 20;
+  position: absolute;
+  width: calc(100% - 1px);
+  background-color: #ffffff;
+}
+.custom-select-options li {
+	padding: .5em 12px;
+  min-height: 28px;
+	box-sizing: content-box;
+	span {
+		color: black;
+		font-size: 14px;
+	}
+}
+.custom-select-options li:hover {
+  background: #EF483E;
+  span {
+		color: #fff;
+	}
+}
+
+.custom-select-options li:focus {
+    outline: none;
+    background: #EF483E;
+    span {
+		color: #fff;
+	}
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.hidden-all {
+  display: none;
+}
+.hidden-visually {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.openIcon {
+    top: 13%;
+    transform: rotateX(180deg);
+}
