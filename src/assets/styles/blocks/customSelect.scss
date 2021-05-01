@@ -42,6 +42,7 @@
 	button {
 		background: white;
 		position: relative;
+        outline: none;
 		&::before {
 			content: '';
 			position: absolute;
